@@ -1,0 +1,65 @@
+======= solc_study.sol:helloworld =======
+EVM assembly:
+... */ "solc_study.sol":26:134  contract helloworld {
+  mstore(0x40, 0x80)
+... */ "solc_study.sol":73:131  constructor() public {
+  callvalue
+    /* "--CODEGEN--":8:17   */
+  dup1
+    /* "--CODEGEN--":5:7   */
+  iszero
+  tag_1
+  jumpi
+    /* "--CODEGEN--":30:31   */
+  0x00
+    /* "--CODEGEN--":27:28   */
+  dup1
+    /* "--CODEGEN--":20:32   */
+  revert
+    /* "--CODEGEN--":5:7   */
+tag_1:
+... */ "solc_study.sol":73:131  constructor() public {
+  pop
+    /* "solc_study.sol":113:123  msg.sender */
+  caller
+    /* "solc_study.sol":105:110  owner */
+  0x00
+  dup1
+    /* "solc_study.sol":105:123  owner = msg.sender */
+  0x0100
+  exp
+  dup2
+  sload
+  dup2
+  0xffffffffffffffffffffffffffffffffffffffff
+  mul
+  not
+  and
+  swap1
+  dup4
+  0xffffffffffffffffffffffffffffffffffffffff
+  and
+  mul
+  or
+  swap1
+  sstore
+  pop
+... */ "solc_study.sol":26:134  contract helloworld {
+  dataSize(sub_0)
+  dup1
+  dataOffset(sub_0)
+  0x00
+  codecopy
+  0x00
+  return
+stop
+
+sub_0: assembly {
+... */  /* "solc_study.sol":26:134  contract helloworld {
+      mstore(0x40, 0x80)
+      0x00
+      dup1
+      revert
+
+    auxdata: 0xa265627a7a7231582098634177fb8fbf5c07ae62569515719bd6ab9481e7eca4a23b0dd1031bc1e67064736f6c634300050c0032
+}
